@@ -5,17 +5,21 @@
 
 <hibernate-mapping>
  	<class name="com.sapient.vo.Store" table="store" >
-   		<id name="storeId" column="storeId" type="int" />
+   		<id name="storeId" column="storeId" type="int">
+   		<generator class="increment"></generator>
+   		</id>
         <property name="storeName" column="storeName" length="90" type="string" not-null="true"/>
-        <many-to-one name="storeContact" column="storeContactId" class="com.sapient.vo.StoreContact" not-null="true" unique="true" />
-        <set table="store_book" name="books">
+        <many-to-one name="storeContact" column="storeContactId" class="com.sapient.vo.StoreContact" not-null="true" unique="true" cascade="save-update" />
+        <set table="store_book" name="books" inverse="true">
         	<key column="storeId" not-null="true"/>
         	<many-to-many class="com.sapient.vo.Book" column="bookId" />
         </set>
    </class>
    
    <class name="com.sapient.vo.StoreContact" table="storeContact" >
-   		<id name="storeContactId" column="storeContactId" type="int" />
+   		<id name="storeContactId" column="storeContactId" type="int">
+   		<generator class="increment"></generator>
+   		</id>
         <property name="storeContactStreet" column="storeContactStreet" type="string" length="90"/>
         <property name="storeContactArea" column="storeContactArea" type="string" length="90"/>
         <property name="storeContactCity" column="storeContactCity" type="string" length="90"/>
