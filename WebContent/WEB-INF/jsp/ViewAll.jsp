@@ -6,22 +6,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
-#div1 {
-	height: 400px;
-	width: 700px;
-	padding-left: 200px;
-	padding-top: 200px;
-}
 
 a {
-	background-color: #708090;
+	background-color: pink;
 	text-decoration: none;
 	color: blue;
-	padding: 15px;
+	padding: 0px;
 }
 
 a:hover {
-	color: black;
+	color: white;
 	text-decoration: underline;
 }
 </style>
@@ -31,23 +25,25 @@ a:hover {
 
 	<h1 align="center" style="color: blue">Books Information</h1>
 
+	<hr/>
+
+	<table align="center" bgcolor="blue" height="200px" width="400px">
+
+        <tr>
+
+		<td><h3><a href="viewallbooks.htm">View All Books</a></h3></td>
+		
+		<td><h3><a href="viewallauthors.htm">View All Authors</a></h3></td>
+		</tr>
+		<tr>
+		<td><h3><a href="viewallpublishers.htm">View All Publishers</a></h3></td>
+		
+		<td><h3><a href="viewallstores.htm">View All Stores</a></h3></td>
+		</tr>
 	
 
-	<div id="div1" align="center">
 
-
-
-		<a href="viewallbooks.htm">View All Books</a><br />
-		
-		<a href="viewallauthors.htm">View All Authors</a><br />
-		
-		<a href="viewallpublishers.htm">View All Publishers</a><br />
-		
-		<a href="viewallstores.htm">View All Stores</a><br />
-	
-
-
-	</div>
+	</table>
 
 </body>
 

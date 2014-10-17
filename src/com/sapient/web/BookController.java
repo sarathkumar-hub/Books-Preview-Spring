@@ -32,35 +32,31 @@ public class BookController {
 		return "ViewAll";
 	}
 
-	@RequestMapping(value = "/viewbooks.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "/viewallbooks.htm", method = RequestMethod.GET)
 	public String ViewAllBooks(Model model) {
-		List<Book> book = dao.getAllBooks();
+		List<Book> book = dao.getAllBooks(true, true, true);
 		model.addAttribute("book", book);
-		List<Author> author = dao.getAllAuthors();
-		model.addAttribute("author", author);
-		List<Publisher> publisher = dao.getAllPublishers();
-		model.addAttribute("publisher", publisher);
 		return "AllBooks";
 
 	}
 
-	@RequestMapping(value = "/viewauthors.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "/viewallauthors.htm", method = RequestMethod.GET)
 	public String ViewAllAuthors(Model model) {
-		List<Author> author = dao.getAllAuthors();
+		List<Author> author = dao.getAllAuthors(true, true);
 		model.addAttribute("author", author);
 		return "AllAuthors";
 	}
 
-	@RequestMapping(value = "/viewpublishers.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "/viewallpublishers.htm", method = RequestMethod.GET)
 	public String ViewAllPublisher(Model model) {
-		List<Publisher> publisher = dao.getAllPublishers();
+		List<Publisher> publisher = dao.getAllPublishers(true, true);
 		model.addAttribute("publisher", publisher);
 		return "AllPublishers";
 	}
 
-	@RequestMapping(value = "/viewstores.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "/viewallstores.htm", method = RequestMethod.GET)
 	public String ViewAllStores(Model model) {
-		List<Store> store = dao.getAllStores();
+		List<Store> store = dao.getAllStores(true, true);
 		model.addAttribute("store", store);
 		return "AllStores";
 	}

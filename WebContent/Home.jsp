@@ -7,21 +7,21 @@
 <title>Insert title here</title>
 <style type="text/css">
 #div1 {
-	height: 400px;
-	width: 700px;
-	padding-left: 200px;
-	padding-top: 200px;
+	height: 600px;
+	width: 1000px;
+	/* 	padding-left: 200px; */
+	padding-top: 100px;
 }
 
 a {
-	background-color: #708090;
+	background-color: pink;
 	text-decoration: none;
 	color: blue;
 	padding: 15px;
 }
 
 a:hover {
-	color: black;
+	color: white;
 	text-decoration: underline;
 }
 </style>
@@ -33,15 +33,17 @@ a:hover {
 
 	<h1 align="center" style="color: blue">Books Information</h1>
 
-        <hr size="2" style="color: red" />
+	<hr size="2" style="color: red" />
 
-        <div id="div1" align="center">
+	<div id="div1" align="center">
 
-                
 
-                <a href="viewall.htm">View All</a>
 
-        </div>
+		<h2>
+			<a href="viewall.htm">View All</a>
+		</h2>
+
+	</div>
 
 </body>
 

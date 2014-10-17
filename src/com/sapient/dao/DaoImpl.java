@@ -79,7 +79,7 @@ public class DaoImpl implements DaoI{
 		Transaction transaction = session.beginTransaction();
 		Query query = session.createQuery(HibernateQueries.getAllStores);
 		storesList = query.list();
-		if(!(fetchContact || fetchBooks )) {
+		if(fetchContact || fetchBooks ) {
 			for(Store store:storesList){
 				if(fetchContact) {
 					Hibernate.initialize(store.getStoreContact());
@@ -98,9 +98,9 @@ public class DaoImpl implements DaoI{
 		List<Publisher> publishersList = null;
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		Query query = session.createQuery(HibernateQueries.getAllStores);
+		Query query = session.createQuery(HibernateQueries.getAllPublishers);
 		publishersList = query.list();
-		if(!(fetchContact || fetchBooks )) {
+		if(fetchContact || fetchBooks ) {
 			for(Publisher publisher:publishersList){
 				if(fetchContact) {
 					Hibernate.initialize(publisher.getPublisherContact());

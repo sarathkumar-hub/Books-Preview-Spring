@@ -12,7 +12,7 @@
 	<h1>Book Details</h1>
 	<hr />
 
-	<table cellpadding="10">
+	<table cellpadding="10" bgcolor="pink">
 		<tr bgcolor="blue">
 			<td>Book Id</td>
 			<td>Book Name</td>
@@ -33,26 +33,13 @@
 
 				<td>${b.bookPrice}</td>
 
-				<c:forEach items="${author}" var="a">
-					<c:if test="${b.bookId}==${a.author_id }">
-						<td>${a.authorName }</td>
-				</
-				</c:if>
-				</c:forEach>
 
-				<c:forEach items="${publisher}" var="p">
-					<c:if test="${b.bookId}==${p.publisher_contactId }">
-						<tr>
-							<td>${p.publisherName }</td>
-						</tr>
-					</c:if>
-				</c:forEach>
-				<a href="viewstores">View Stores</a>
+				<td><c:forEach items="${b.bookAuthors}" var="a">
+						<c:out value="${a.authorName}"></c:out>
+					</c:forEach></td>
+				<td>${b.bookPublisher.publisherName}</td>
+				<td><a href="viewstores">View Stores</a></td>
 		</c:forEach>
-
-
-		</tr>
-
 	</table>
 
 </body>

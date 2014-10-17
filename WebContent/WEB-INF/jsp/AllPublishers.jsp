@@ -12,16 +12,16 @@
 	<h1>All Publisher</h1>
 	<hr />
 
-	<table cellpadding="10">
+	<table cellpadding="10" bgcolor="pink">
 		<tr bgcolor="blue">
 			<td>Publisher Id</td>
 			<td>Publisher Name</td>
+			<td>Books</td>
 
 		</tr>
 
 
 		<c:forEach items="${publisher}" var="p">
-			<hr/>
 
 			<tr>
 
@@ -29,8 +29,10 @@
 
 				<td>${p.publisherName}</td>
 
-
-				<a href="viewbooks">View Books</a>
+				<td><a href="viewbooks">View Books</a></td>
 			</tr>
 		</c:forEach>
+
 	</table>
+</body>
+</html>

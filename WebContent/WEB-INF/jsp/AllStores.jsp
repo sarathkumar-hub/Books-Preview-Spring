@@ -9,26 +9,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>All Authors</h1>
+	<h1>All Stores</h1>
 	<hr />
 
 	<table cellpadding="10" bgcolor="pink">
 		<tr bgcolor="blue">
-			<td>Author Id</td>
-			<td>Author Name</td>
-			<td>Books</td>
+			<td>Store Id</td>
+			<td>Store Name</td>
+			<td>Books Available</td>
 
 		</tr>
 
 
-		<c:forEach items="${author}" var="a">
+		<c:forEach items="${store}" var="s">
 			<tr>
 
-				<td>${a.authorId}</td>
+				<td>${s.storeId}</td>
 
-				<td>${a.authorName}</td>
+				<td>${s.storeName}</td>
 
-				<td><a href="viewbooks">View Books</a></td>
+				<td><a href="viewbooks">Available Books</a></td>
 			</tr>
 		</c:forEach>
 	</table>
