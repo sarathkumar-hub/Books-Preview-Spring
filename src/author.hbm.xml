@@ -4,19 +4,23 @@
           "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.sapient.vo">
 	<class name="Author"  table="author">
-		<id name="authorId" column="authorId" type="int" />
+		<id name="authorId" column="authorId" type="int">
+		<generator class="increment"></generator>
+		</id>
 		<property name="authorName" column="authorName" length="90"
 			type="string" not-null="true" />
-		<set name="authorBooks" table="book_author" >
+		<set name="authorBooks" table="book_author" inverse="true">
 			<key column="authorId" not-null="true" />
 			<many-to-many class="com.sapient.vo.Book" column="bookId" />
 		</set>
 		<many-to-one name="authorContact" column="authorContactId"
-			class="com.sapient.vo.AuthorContact" not-null="true" unique="true" />
+			class="com.sapient.vo.AuthorContact" not-null="true" unique="true" cascade="save-update"/>
 	</class>
 	
 	<class name="com.sapient.vo.AuthorContact" table="authorContact">
-		<id name="authorContactId" column="authorContactId" type="int" />
+		<id name="authorContactId" column="authorContactId" type="int">
+		<generator class="increment"></generator>
+		</id>
 		<property name="authorContactEmail" column="authorContactEmail"
 			type="string" length="90" />
 		<property name="authorContactStreet" column="authorContactStreet"
