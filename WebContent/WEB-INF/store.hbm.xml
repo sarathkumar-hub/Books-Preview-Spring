@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ 	<class name="com.sapient.vo.Store" table="store" >
+   		<id name="storeId" column="storeId" type="int" />
+        <property name="storeName" column="storeName" length="90" type="string" not-null="true"/>
+        <many-to-one name="storeContact" column="storeContactId" class="com.sapient.vo.StoreContact" not-null="true" unique="true" />
+        <set table="store_book" name="books">
+        	<key column="storeId" not-null="true"/>
+        	<many-to-many class="com.sapient.vo.Book" column="bookId" />
+        </set>
+   </class>
+   
+   <class name="com.sapient.vo.StoreContact" table="storeContact" >
+   		<id name="storeContactId" column="storeContactId" type="int" />
+        <property name="storeContactStreet" column="storeContactStreet" type="string" length="90"/>
+        <property name="storeContactArea" column="storeContactArea" type="string" length="90"/>
+        <property name="storeContactCity" column="storeContactCity" type="string" length="90"/>
+        <property name="storeContactPhoneNo" column="storeContactPhoneNo" type="long" />
+   </class>
+</hibernate-mapping>

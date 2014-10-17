@@ -26,72 +26,29 @@ a:hover {
 }
 </style>
 </head>
+
 <body>
 
-	<h1 align="center" style="color: blue">View All</h1>
+	<h1 align="center" style="color: blue">Books Information</h1>
 
-	<hr size="2" style="color: red" />
+	
 
 	<div id="div1" align="center">
 
 
 
-		<a href="viewallBooks">View All</a>
-		<body>
+		<a href="viewallbooks.htm">View All Books</a><br />
+		
+		<a href="viewallauthors.htm">View All Authors</a><br />
+		
+		<a href="viewallpublishers.htm">View All Publishers</a><br />
+		
+		<a href="viewallstores.htm">View All Stores</a><br />
+	
 
-			<h1 align="center" style="color: blue">Books Information</h1>
-
-			<hr size="2" style="color: red" />
-
-			<div id="div1" align="center">
-
-
-
-				<a href="viewall">View All</a>
-
-			</div>
-
-		</body>
-		<body>
-
-			<h1 align="center" style="color: blue">Books Information</h1>
-
-			<hr size="2" style="color: red" />
-
-			<div id="div1" align="center">
-
-
-
-				<a href="viewall">View All</a>
-
-			</div>
-
-		</body>
-		<body>
-
-			<h1 align="center" style="color: blue">Books Information</h1>
-
-			<hr size="2" style="color: red" />
-
-			<div id="div1" align="center">
-
-
-
-				<a href="viewallbooks.htm">View All Books</a><br />
-				<hr />
-				<a href="viewallauthors.htm">View All Authors</a><br />
-				<hr />
-				<a href="viewallpublishers.htm">View All Publishers</a><br />
-				<hr />
-				<a href="viewallstores.htm">View All Stores</a><br />
-				<hr />
-
-
-			</div>
-
-		</body>
 
 	</div>
 
 </body>
+
 </html>

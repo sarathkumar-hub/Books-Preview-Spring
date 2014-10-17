@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.hibernate.Hibernate;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -569,6 +570,18 @@ public class DaoImpl implements DaoI{
 
 	public boolean addStore(Store store) {
 		// TODO Auto-generated method stub
+		Session session = getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		try {
+			session.saveOrUpdate(store);
+			transaction.commit();
+			return true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			transaction.rollback();
+		} finally {
+			session.close();
+		}
 		return false;
 	}
 

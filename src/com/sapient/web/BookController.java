@@ -24,6 +24,13 @@ public class BookController {
 	public void setDao(DaoI dao) {
 		this.dao = dao;
 	}
+	
+	
+
+	@RequestMapping(value = "/viewall.htm", method = RequestMethod.GET)
+	public String Viewall(){
+		return "ViewAll";
+	}
 
 	@RequestMapping(value = "/viewbooks.htm", method = RequestMethod.GET)
 	public String ViewAllBooks(Model model) {
