@@ -59,8 +59,8 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc</artifactId> 
-			<version>10.2.0.4.0</version> </dependency>
+		<dependency> <groupId>com.oracle</groupId> <artifactId>oraclejdbc</artifactId> 
+			<version>14.0</version> </dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
