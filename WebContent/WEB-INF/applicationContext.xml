@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="configLocation" value="src/hibernate.cfg.xml"></property>
+		<property name="configLocation" value="WEB-INF/hibernate.cfg.xml"></property>
 	</bean>
 
 	<bean id="daoImpl" class="com.sapient.dao.DaoImpl">
