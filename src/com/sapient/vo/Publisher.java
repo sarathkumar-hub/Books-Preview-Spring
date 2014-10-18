@@ -2,6 +2,12 @@ package com.sapient.vo;
 
 import java.util.Set;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 /**
  * @author Sarath Kumar
  *
@@ -9,7 +15,13 @@ import java.util.Set;
 public class Publisher {
 
 	private int publisherId;
+	
+	@NotBlank(message="Not Null")
+	@NotNull(message="Not Null")
+	@Size(min=3, max=20)
 	private String publisherName;
+	
+	@Valid
 	private PublisherContact publisherContact;
 	private Set<Book> publisherBooks;
 

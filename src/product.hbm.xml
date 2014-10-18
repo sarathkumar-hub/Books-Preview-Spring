@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.sapient.hibernate.vo.Product" table="products" >
+   		<id name="productId" column="pid" type="int" />
+        <property name="productName" column="pname" length="50" not-null="true"/>
+        <property name="productDescription" column="description" type="string" length="500"/>
+        <property name="productPrice" column="price" type="double" />
+        <property name="productImage" column="pimage" type="string" length="50" />
+        <set name="shops" table="prods_shops">
+        	<key column="pid" not-null="true"/>
+        	<many-to-many class="com.sapient.hibernate.vo.Shop" column="sid" />
+        </set>
+   </class>
+</hibernate-mapping>

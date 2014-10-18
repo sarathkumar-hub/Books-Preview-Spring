@@ -18,4 +18,11 @@ public interface HibernateQueries {
 	public static String getAuthorById = "from Author A where A.authorId=:authorId";
 	public static String getPublisherById = "from Publisher P where P.publisherId=:publisherId";
 	
+	public static String deleteStoreBookRelation = "delete from BookStoreRelation where storeId=?";
+	public static String deleteStore="delete from Store where storeId=?";
+	
+	public static String deleteAuthorBookRelation = "delete from BookAuthorRelation where authorId=?";
+	public static String deleteAuthor="delete from Author where authorId=?";
+	
+	
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.sapient.hibernate.vo.Shop" table="shops" >
+   		<id name="shopId" column="sid" type="int" />
+   		<property name="shopName" column="sname" type="string" length="50" />
+   		<property name="shopStreet" type="string" column="street" length="50" />
+   		<property name="shopArea" type="string" column="area" length="50"/>
+   		<property name="shopCity" type="string" column="city" length="50" />
+   		<property name="shopPhoneNo" column="phone" />
+   		<set name="products" table="prods_shops" inverse="false">
+   			<key column="sid" not-null="true"/>
+   			<many-to-many class="com.sapient.hibernate.vo.Product" column="pid" />
+   		</set>
+   </class>
+</hibernate-mapping>

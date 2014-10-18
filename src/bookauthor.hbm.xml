@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+          "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sapient.vo.BookAuthorRelation" table="book_author">
+		<composite-id name="key" class="com.sapient.vo.BookAuthorKey">
+			<key-property name="bookId" column="bookId"></key-property>
+			<key-property name="authorId" column="authorId"></key-property>
+		</composite-id>
+		
+		 <many-to-one name="book" column="bookId" class="com.sapient.vo.Book" not-null="true"  insert="false" update="false"/>
+		  <many-to-one name="author" column="authorId" class="com.sapient.vo.Author" not-null="true"  insert="false" update="false"/>
+
+	</class>
+</hibernate-mapping>

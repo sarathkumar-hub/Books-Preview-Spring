@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+          "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sapient.vo.BookStoreRelation" table="store_book">
+		<composite-id name="key" class="com.sapient.vo.BookStoreKey">
+			<key-property name="bookId" column="bookId"></key-property>
+			<key-property name="storeId" column="storeId"></key-property>
+		</composite-id>
+		
+		 <many-to-one name="book" column="bookId" class="com.sapient.vo.Book" not-null="true"  insert="false" update="false"/>
+		  <many-to-one name="store" column="storeId" class="com.sapient.vo.Store" not-null="true"  insert="false" update="false"/>
+
+	</class>
+</hibernate-mapping>

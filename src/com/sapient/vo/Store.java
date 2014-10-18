@@ -2,10 +2,22 @@ package com.sapient.vo;
 
 import java.util.Set;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Store {
 
 	private int storeId;
+	
+	@NotBlank(message="Not Null")
+	@NotNull(message="Not Null")
+	@Size(min=3, max=20)
 	private String storeName;
+	
+	@Valid
 	private StoreContact storeContact;
 	private Set<Book> books;
 

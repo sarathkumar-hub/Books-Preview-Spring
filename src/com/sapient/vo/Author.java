@@ -2,10 +2,22 @@ package com.sapient.vo;
 
 import java.util.Set;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Author {
 
 	private int authorId;
+	
+	@NotBlank(message="Not Null")
+	@NotNull(message="Not Null")
+	@Size(min=3, max=20)
 	private String authorName;
+	
+	@Valid
 	private AuthorContact authorContact;
 	private Set<Book> authorBooks;
 

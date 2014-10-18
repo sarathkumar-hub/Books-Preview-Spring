@@ -11,13 +11,16 @@
         <property name="bookName" column="bookName" length="90" type="string" not-null="true"/>
         <property name="bookPrice" column="bookPrice" type="double" />
         <many-to-one name="bookPublisher" column="bookPublisherId" class="com.sapient.vo.Publisher" not-null="true" cascade="save-update"/>
+      
         <set name="bookAuthors" table="book_author" cascade="save-update">
         	<key column="bookId" not-null="true"/>
         	<many-to-many class="com.sapient.vo.Author" column="authorId" />	
         </set>
+      
         <set name="bookStores" table="store_book" cascade="save-update">
         	<key column="bookId" not-null="true"/>
         	<many-to-many class="com.sapient.vo.Store" column="storeId" />	
         </set>
    </class>
 </hibernate-mapping>
+

@@ -83,10 +83,9 @@ public class DaoImpl implements DaoI {
 		Transaction transaction = session.beginTransaction();
 		Query query = session.createQuery(HibernateQueries.getAllStores);
 		storesList = query.list();
-
-		if(fetchContact || fetchBooks ) {
-			for(Store store:storesList){
-				if(fetchContact) {
+		if (fetchContact || fetchBooks) {
+			for (Store store : storesList) {
+				if (fetchContact) {
 					Hibernate.initialize(store.getStoreContact());
 				}
 				if (fetchBooks) {
@@ -107,9 +106,9 @@ public class DaoImpl implements DaoI {
 		Transaction transaction = session.beginTransaction();
 		Query query = session.createQuery(HibernateQueries.getAllPublishers);
 		publishersList = query.list();
-		if(fetchContact || fetchBooks ) {
-			for(Publisher publisher:publishersList){
-				if(fetchContact) {
+		if (fetchContact || fetchBooks) {
+			for (Publisher publisher : publishersList) {
+				if (fetchContact) {
 					Hibernate.initialize(publisher.getPublisherContact());
 				}
 				if (fetchBooks) {
@@ -663,6 +662,7 @@ public class DaoImpl implements DaoI {
 		return false;
 	}
 
+	//working
 	public boolean addBook(Book book) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
@@ -679,6 +679,7 @@ public class DaoImpl implements DaoI {
 		return false;
 	}
 
+	//working
 	public boolean addPublisher(Publisher publisher) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
@@ -880,11 +881,25 @@ public class DaoImpl implements DaoI {
 		return false;
 	}
 
+	//working
 	public boolean deleteStore(Store store) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		try{
-			session.delete(store);
+			String hql = HibernateQueries.deleteStoreBookRelation;
+			Query query = session.createQuery(hql);
+			query.setParameter(0, store.getStoreId());			
+			query.executeUpdate();
+			
+			
+			String hql2 = HibernateQueries.deleteStore;
+			query = session.createQuery(hql2);
+			query.setParameter(0, store.getStoreId());
+			query.executeUpdate();
+			
+			transaction.commit();
+			
+			return true;
 		}catch(HibernateException e){
 			transaction.rollback();
 		}finally{
@@ -893,8 +908,31 @@ public class DaoImpl implements DaoI {
 		return false;
 	}
 
+	//working
 	public boolean deleteStore(int storeId) {
-		// TODO Auto-generated method stub
+		Session session = getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		try{
+			
+			String hql = HibernateQueries.deleteStoreBookRelation;
+			Query query = session.createQuery(hql);
+			query.setParameter(0, storeId);			
+			query.executeUpdate();
+			
+			
+			String hql2 = HibernateQueries.deleteStore;
+			query = session.createQuery(hql2);
+			query.setParameter(0, storeId);
+			query.executeUpdate();
+			
+			transaction.commit();
+			
+			return true;
+		}catch(HibernateException e){
+			transaction.rollback();
+		}finally{
+			session.close();
+		}
 		return false;
 	}
 
@@ -909,12 +947,55 @@ public class DaoImpl implements DaoI {
 	}
 
 	public boolean deleteAuthor(Author author) {
-		// TODO Auto-generated method stub
+		Session session = getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		try{
+			String hql = HibernateQueries.deleteAuthorBookRelation;
+			Query query = session.createQuery(hql);
+			query.setParameter(0, author.getAuthorId());			
+			query.executeUpdate();
+			
+			
+			String hql2 = HibernateQueries.deleteAuthor;
+			query = session.createQuery(hql2);
+			query.setParameter(0, author.getAuthorId());
+			query.executeUpdate();
+			
+			transaction.commit();
+			
+			return true;
+		}catch(HibernateException e){
+			transaction.rollback();
+		}finally{
+			session.close();
+		}
 		return false;
 	}
 
 	public boolean deleteAuthor(int authorId) {
-		// TODO Auto-generated method stub
+		Session session = getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		try{
+			
+			String hql = HibernateQueries.deleteAuthorBookRelation;
+			Query query = session.createQuery(hql);
+			query.setParameter(0, authorId);			
+			query.executeUpdate();
+			
+			
+			String hql2 = HibernateQueries.deleteAuthor;
+			query = session.createQuery(hql2);
+			query.setParameter(0, authorId);
+			query.executeUpdate();
+			
+			transaction.commit();
+			
+			return true;
+		}catch(HibernateException e){
+			transaction.rollback();
+		}finally{
+			session.close();
+		}
 		return false;
 	}
 
