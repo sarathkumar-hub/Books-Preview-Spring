@@ -602,8 +602,7 @@ public class DaoImpl implements DaoI {
 		if (publisher != null) {
 			publisher.setPublisherName(editPublisher.getPublisherName());
 			if (editContact) {
-				publisher.setPublisherContact(editPublisher
-						.getPublisherContact());
+				publisher.setPublisherContact(editPublisher.getPublisherContact());
 			}
 			if (editBooks) {
 				publisher.setPublisherBooks(editPublisher.getPublisherBooks());
@@ -646,71 +645,73 @@ public class DaoImpl implements DaoI {
 	}
 
 	// working
-	public boolean addStore(Store store) {
+	public int addStore(Store store) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			session.save(store);
+			int primaryKey = (Integer)session.save(store);
 			transaction.commit();
-			return true;
+			return primaryKey;
 		} catch (HibernateException e) {
 			transaction.rollback();
 
 		} finally {
 			session.close();
 		}
-		return false;
+		return -1;
 	}
 
 	//working
-	public boolean addBook(Book book) {
+	public int addBook(Book book) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			session.save(book);
+			book.setBookPublisher(getPublisherById(book.getBookPublisher().getPublisherId(), true, true));
+			int primaryKey = (Integer)session.save(book);
 			transaction.commit();
-			return true;
+			return primaryKey;
 		} catch (HibernateException e) {
 			transaction.rollback();
 
 		} finally {
 			session.close();
 		}
-		return false;
+		return -1;
 	}
 
 	//working
-	public boolean addPublisher(Publisher publisher) {
+	public int addPublisher(Publisher publisher) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			session.save(publisher);
+			int primaryKey = (Integer)session.save(publisher);
 			transaction.commit();
-			return true;
+			return primaryKey;
 		} catch (HibernateException e) {
 			transaction.rollback();
 
 		} finally {
 			session.close();
 		}
-		return false;
+		return -1;
 	}
 
 	//working
-	public boolean addAuthor(Author author) {
+	public int addAuthor(Author author) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			session.save(author);
+			int primaryKey = (Integer)session.save(author);
 			transaction.commit();
-			return true;
+			return primaryKey;
 		} catch (HibernateException e) {
+			e.printStackTrace();
 			transaction.rollback();
 
 		} finally {
 			session.close();
 		}
-		return false;
+		return -1;
 	}
 
 	// working
@@ -873,6 +874,7 @@ public class DaoImpl implements DaoI {
 			transaction.commit();
 			return true;
 		} catch (HibernateException e) {
+			e.printStackTrace();
 			transaction.rollback();
 
 		} finally {
@@ -954,8 +956,6 @@ public class DaoImpl implements DaoI {
 			Query query = session.createQuery(hql);
 			query.setParameter(0, author.getAuthorId());			
 			query.executeUpdate();
-			
-			
 			String hql2 = HibernateQueries.deleteAuthor;
 			query = session.createQuery(hql2);
 			query.setParameter(0, author.getAuthorId());
@@ -1029,5 +1029,28 @@ public class DaoImpl implements DaoI {
 		return false;
 	}
 
+	@Override
+	public boolean deleteBookForStore(int bookId, int StoreId) {
+		deleteStoreForBook(StoreId,bookId);
+		return false;
+	}
+
+	@Override
+	public boolean deleteBookForStore(Book book, Store store) {
+		deleteStoreForBook(store,book);
+		return false;
+	}
+
+	@Override
+	public boolean deleteBookForAuthor(Book book, Author author) {
+		deleteAuthorForBook(author, book);
+		return false;
+	}
+
+	@Override
+	public boolean deleteBookForAuthor(int bookId, int authorId) {
+		deleteAuthorForBook(authorId, bookId);
+		return false;
+	}
 
 }

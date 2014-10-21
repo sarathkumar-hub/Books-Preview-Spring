@@ -8,13 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Select Author</h1>
+<h1>Select Publisher</h1>
 <hr />
 <c:forEach items="${publishersList}" var="publisher">
-	<form action="editPublisher.edit" method="get">
+	<form action="editpublisher.edit" method="get">
 		<input type="hidden" name="publisherId" value="${publisher.publisherId }">
 		<input type="submit" value="${publisher.publisherName }"/>
 	</form>
 </c:forEach>
+<%@include file="EditFooter.jsp" %>
 </body>
 </html>

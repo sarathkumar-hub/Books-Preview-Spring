@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Edit Author</h1>
+<h1>Edit Store</h1>
 <hr />
 
 <spring:form action="editstore.edit" method="post" commandName="store">
@@ -22,8 +22,18 @@ Area:- <spring:input path="storeContact.storeContactArea" /><spring:errors path=
 City:- <spring:input path="storeContact.storeContactCity" /><spring:errors path="storeContact.storeContactCity"  /><br />
 <input type="submit" />
 </spring:form>
-<core:forEach items="${booksList }" var="book">
-
+<core:forEach items="${store.books }" var="book">
+<form action="bookforstore.delete" method="post">
+<input type="hidden" name="bookId" value="${book.bookId }">
+<input type="hidden" name="storeId" value="${store.storeId }">
+<input type="submit" value="Delete ${book.bookName } from Store" />
+</form>
+<hr />
 </core:forEach>
+<form action="addbookforstore.add" method="get">
+	<input type="hidden" name="storeId" value="${store.storeId }">
+	<input type="submit" value="Add Book For Store">
+</form>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

@@ -8,10 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Edit Author</h1>
+<h1>Edit Publisher</h1>
 <hr />
 
-<spring:form action="editPublisher.edit" method="post" commandName="publisher">
+<spring:form action="editpublisher.edit" method="post" commandName="publisher">
 <spring:hidden path="publisherId"/>
 Name:- <spring:input path="publisherName" /><spring:errors path="publisherName"  /><br/>
 <spring:hidden path="publisherContact.publisherContactId"/>
@@ -21,5 +21,6 @@ Area:- <spring:input path="publisherContact.publisherContactArea" /><spring:erro
 City:- <spring:input path="publisherContact.publisherContactCity" /><spring:errors path="publisherContact.publisherContactCity"  /><br />
 <input type="submit" />
 </spring:form>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

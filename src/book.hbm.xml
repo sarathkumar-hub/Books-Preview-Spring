@@ -6,7 +6,7 @@
 <hibernate-mapping>
    <class name="com.sapient.vo.Book" table="book" >
    		<id name="bookId" column="bookId" type="int" >
-   		<generator class="increment"></generator>
+   		<generator class="native"/>
    		</id>
         <property name="bookName" column="bookName" length="90" type="string" not-null="true"/>
         <property name="bookPrice" column="bookPrice" type="double" />

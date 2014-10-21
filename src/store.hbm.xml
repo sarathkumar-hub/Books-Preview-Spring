@@ -6,10 +6,10 @@
 <hibernate-mapping>
  	<class name="com.sapient.vo.Store" table="store" >
    		<id name="storeId" column="storeId" type="int">
-   		<generator class="increment"></generator>
+   		<generator class="native"/>
    		</id>
         <property name="storeName" column="storeName" length="90" type="string" not-null="true"/>
-        <many-to-one name="storeContact" column="storeContactId" class="com.sapient.vo.StoreContact" not-null="true" unique="true" cascade="save-update" />
+        <many-to-one name="storeContact" column="storeContactId" class="com.sapient.vo.StoreContact" not-null="true" unique="true" cascade="all" />
         <set table="store_book" name="books" inverse="true">
         	<key column="storeId" not-null="true"/>
         	<many-to-many class="com.sapient.vo.Book" column="bookId" />
@@ -18,7 +18,7 @@
    
    <class name="com.sapient.vo.StoreContact" table="storeContact" >
    		<id name="storeContactId" column="storeContactId" type="int">
-   		<generator class="increment"></generator>
+   		<generator class="native"/>
    		</id>
         <property name="storeContactStreet" column="storeContactStreet" type="string" length="90"/>
         <property name="storeContactArea" column="storeContactArea" type="string" length="90"/>

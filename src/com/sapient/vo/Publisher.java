@@ -6,7 +6,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author Sarath Kumar
@@ -16,9 +16,9 @@ public class Publisher {
 
 	private int publisherId;
 	
-	@NotBlank(message="Not Null")
-	@NotNull(message="Not Null")
-	@Size(min=3, max=20)
+	@Size(min=3,max=150)
+	@NotEmpty(message="Name cannot be Empty")
+	@NotNull(message="Name cannot be Null")
 	private String publisherName;
 	
 	@Valid

@@ -28,7 +28,13 @@
 
 				<td>${s.storeName}</td>
 
-				<td><a href="viewbooks">Available Books</a></td>
+				<td><form action="booksforstore.htm" method="get">
+				<input type="hidden" name="storeId" value="${s.storeId }" />
+				<input type="submit" value="View Books">
+				</form></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<%@include file="EditFooter.jsp" %>
+	</body>
+	</html>

@@ -10,17 +10,17 @@ public class PublisherContact {
 
 	private int publisherContactId;
 	
-	@Size(min=5,max=30)
+	@Size(min=3,max=30)
 	@NotEmpty(message="Street cannot be Empty")
 	@NotNull(message="Street cannot be Null")
 	private String publisherContactStreet;
-	
-	@Size(min=5,max=150)
+
+	@Size(min=3,max=150)
 	@NotEmpty(message="City cannot be Empty")
 	@NotNull(message="City cannot be Null")
 	private String publisherContactCity;
 	
-	@Size(min=5,max=30)
+	@Size(min=3,max=30)
 	@NotEmpty(message="Area cannot be Empty")
 	@NotNull(message="Area cannot be Null")
 	private String publisherContactArea;

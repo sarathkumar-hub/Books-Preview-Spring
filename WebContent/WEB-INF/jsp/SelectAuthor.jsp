@@ -11,10 +11,11 @@
 <h1>Select Author</h1>
 <hr />
 <c:forEach items="${authorsList }" var="author">
-	<form action="editAuthor.edit" method="get">
+	<form action="editauthor.edit" method="get">
 		<input type="hidden" name="authorId" value="${author.authorId }">
 		<input type="submit" value="${author.authorName }"/>
 	</form>
 </c:forEach>
+<%@include file="EditFooter.jsp" %>
 </body>
 </html>

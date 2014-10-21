@@ -2,11 +2,24 @@ package com.sapient.vo;
 
 import java.util.Set;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 public class Book {
 
 	private int bookId;
+	
+	@Size(min=3,max=150)
+	@NotEmpty(message="Name cannot be Empty")
+	@NotNull(message="Name cannot be Null")
 	private String bookName;
+	
+	@Range(min=100, max = 10000, message="Price can be between 100 and 10000")
 	private double bookPrice;
+	
 	private Publisher bookPublisher;
 	private Set<Author> bookAuthors;
 	private Set<Store> bookStores;

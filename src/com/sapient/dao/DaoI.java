@@ -75,10 +75,10 @@ public interface DaoI {
 	public boolean editStore(Store store);
 	public boolean editStore(Store store, boolean editContact, boolean editBooks);
 	
-	public boolean addStore(Store store);
-	public boolean addBook(Book book);
-	public boolean addPublisher(Publisher publisher);
-	public boolean addAuthor(Author author);
+	public int addStore(Store store);
+	public int addBook(Book book);
+	public int addPublisher(Publisher publisher);
+	public int addAuthor(Author author);
 	
 	public boolean addStoreForBook(Store store, Book book);
 	public boolean addStoreForBook(int storeId, int bookId);
@@ -109,5 +109,10 @@ public interface DaoI {
 	
 	public boolean deleteImageForBook(Book book);
 	public boolean deleteImageForBook(int bookId);
+	
+	boolean deleteBookForStore(int bookId, int StoreId);
+	boolean deleteBookForStore(Book book, Store store);
+	boolean deleteBookForAuthor(Book book, Author author);
+	boolean deleteBookForAuthor(int bookId, int authorId);
 	
 }

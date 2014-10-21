@@ -8,15 +8,28 @@
 		<property name="hibernate.connection.driver_class">
 			oracle.jdbc.driver.OracleDriver</property>
 		<property name="hibernate.connection.url">
-			jdbc:oracle:thin:@10.202.64.34:1521:xe</property>
+			jdbc:oracle:thin:@10.202.62.39:1521:xe</property>
 		<property name="hibernate.connection.username">system</property>
 		<property name="hibernate.connection.password">sapient123</property>
-		<!-- <property name="hibernate.conncetion.pool_size">5</property> -->
+		<property name="hibernate.conncetion.pool_size">5</property>
 
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
 		<property name="hibernte.dialect">org.hibernate.dialect.OracleSQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- <property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:1521/xe</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">system123</property>
+		<property name="hibernate.conncetion.pool_size">5</property>
+
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernte.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property> -->
 		
 		<mapping resource="author.hbm.xml"/>
 		<mapping resource="book.hbm.xml"/>

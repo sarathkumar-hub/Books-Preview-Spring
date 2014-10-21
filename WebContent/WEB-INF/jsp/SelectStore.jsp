@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Select Author</h1>
+<h1>Select Store</h1>
 <hr />
 <c:forEach items="${storesList}" var="store">
 	<form action="editstore.edit" method="get">
@@ -16,5 +16,6 @@
 		<input type="submit" value="${store.storeName}"/>
 	</form>
 </c:forEach>
+<%@include file="EditFooter.jsp" %>
 </body>
 </html>

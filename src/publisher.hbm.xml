@@ -5,10 +5,10 @@
 <hibernate-mapping>
    <class name="com.sapient.vo.Publisher" table="publisher" >
    		<id name="publisherId" column="publisherId" type="int">
-   		<generator class="increment"></generator>
+   		<generator class="native"/>
    		</id>
         <property name="publisherName" column="publisherName" length="90" type="string" not-null="true"/>
-        <many-to-one name="publisherContact" column="publisherContactId" class="com.sapient.vo.PublisherContact" not-null="true" unique="true" />
+        <many-to-one name="publisherContact" column="publisherContactId" class="com.sapient.vo.PublisherContact" not-null="true" unique="true" cascade="all" />
         <set name="publisherBooks" inverse="true">
         	<key column="bookPublisherId" />
         	<one-to-many class="com.sapient.vo.Book" />
@@ -17,7 +17,7 @@
    
    <class name="com.sapient.vo.PublisherContact" table="publisherContact" >
    		<id name="publisherContactId" column="publisherContactId" type="int">
-   		<generator class="increment"></generator>
+   		<generator class="native"/>
    		</id>
         <property name="publisherContactStreet" column="publisherContactStreet" type="string" length="90" />
         <property name="publisherContactCity" column="publisherContactCity" type="string" length="90"/>

@@ -29,10 +29,14 @@
 
 				<td>${p.publisherName}</td>
 
-				<td><a href="viewbooks">View Books</a></td>
+				<td><form action="booksforpublisher.htm" method="get">
+				<input type="hidden" name="publisherId" value="${p.publisherId }" />
+				<input type="submit" value="View Books">
+				</form></td>
 			</tr>
 		</c:forEach>
 
 	</table>
+	<%@include file="EditFooter.jsp" %>
 </body>
 </html>

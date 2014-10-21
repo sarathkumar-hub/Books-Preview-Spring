@@ -14,7 +14,7 @@ public class AuthorContact {
 
 	private int authorContactId;
 	
-	@Size(min=5,max=150)
+	@Size(min=3,max=150)
 	@NotEmpty(message="Name cannot be Empty")
 	@NotNull(message="Name cannot be Null")
 	private String authorContactEmail;
@@ -22,17 +22,17 @@ public class AuthorContact {
 	@Range(min=7000000000L, max=9999999999L, message="Phone Number must be of 10 digits and within valid range")
 	private long authorContactPhoneNo;
 	
-	@Size(min=5,max=30)
+	@Size(min=3,max=30)
 	@NotEmpty(message="Street cannot be Empty")
 	@NotNull(message="Street cannot be Null")
 	private String authorContactStreet;
 	
-	@Size(min=5,max=30)
+	@Size(min=3,max=30)
 	@NotEmpty(message="Area cannot be Empty")
 	@NotNull(message="Area cannot be Null")
 	private String authorContactArea;
 	
-	@Size(min=5,max=150)
+	@Size(min=3,max=150)
 	@NotEmpty(message="City cannot be Empty")
 	@NotNull(message="City cannot be Null")
 	private String authorContactCity;

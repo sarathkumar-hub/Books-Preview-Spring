@@ -28,7 +28,13 @@
 
 				<td>${a.authorName}</td>
 
-				<td><a href="viewbooks">View Books</a></td>
+				<td><form action="booksforauthor.htm" method="get">
+				<input type="hidden" name="authorId" value="${a.authorId }" />
+				<input type="submit" value="View Books">
+				</form></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<%@include file="EditFooter.jsp" %>
+</body>
+</html>

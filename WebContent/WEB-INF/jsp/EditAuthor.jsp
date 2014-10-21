@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="spring"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,7 +12,7 @@
 <h1>Edit Author</h1>
 <hr />
 
-<spring:form action="editAuthor.edit" method="post" commandName="author">
+<spring:form action="editauthor.edit" method="post" commandName="author">
 <spring:hidden path="authorId"/>
 Name:- <spring:input path="authorName" /><spring:errors path="authorName"  /><br/>
 <spring:hidden path="authorContact.authorContactId"/>
@@ -22,5 +23,19 @@ Area:- <spring:input path="authorContact.authorContactArea" /><spring:errors pat
 City:- <spring:input path="authorContact.authorContactCity" /><spring:errors path="authorContact.authorContactCity"  /><br />
 <input type="submit" />
 </spring:form>
+<hr />
+<core:forEach items="${author.authorBooks }" var="book">
+<form action="bookforauthor.delete" method="post">
+<input type="hidden" value="${book.bookId}" name="bookId" />
+<input type="hidden" value="${author.authorId}" name="authorId" />
+<input type="submit" value="Delete ${book.bookName }" >
+</form>
+</core:forEach>
+<hr />
+<form action="addbookforauthor.add">
+	<input type="hidden" value="${author.authorId }" name="authorId">
+	<input type="submit" value="Add Books For Author">
+</form>
+<%@include file="Footer.jsp" %>
 </body>
 </html>
