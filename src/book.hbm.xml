@@ -4,7 +4,7 @@
           "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name="com.sapient.vo.Book" table="book" >
+   <class name="com.sapient.vo.BookS" table="book" >
    		<id name="bookId" column="bookId" type="int" >
    		<generator class="native"/>
    		</id>
