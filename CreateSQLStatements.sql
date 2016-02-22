@@ -7,7 +7,7 @@ publisherContactPhoneNo long,
 primary key (publisherContactid)
 );
 
-create table publisher(
+--create table publisher(
 publisherId int not null,
 publisherName varchar(90),
 publisherContactid int not null,
