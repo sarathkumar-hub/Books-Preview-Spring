@@ -3,7 +3,7 @@
 	<modelVersion>4.121.123</modelVersion>
 	<groupId>Book</groupId>
 	<artifactId>Book</artifactId>
-	<version>2.4.10-REMOTE</version>
+	<version>2.3.10-REMOTE</version>
 	<packaging>war</packaging>
 	<build>
 		<sourceDirectory>src</sourceDirectory>

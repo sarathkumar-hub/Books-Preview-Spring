@@ -29,8 +29,8 @@ insert into authorContact values(sequence_id.nextval, 'dcpandey@gmail.com', 9099
 insert into authorContact values(sequence_id.nextval, 'ericgamma@gmail.com', 9018314377, 'Old Palace', 'Sector 32','Madurai');
 insert into authorContact values(sequence_id.nextval, 'richardhelm@gmail.com', 9018311847, 'Old Fort', 'Ardee City','Bombay');
 insert into authorContact values(sequence_id.nextval, 'ralphjohnson@gmail.com', 7198311847, 'Near Bus Stop', 'Marthahalli','Bangalore');
-insert into authorContact values(sequence_id.nextval, 'johnvissidies@gmail.com', 9018319147, 'Beside Pvr Mall', 'Ardee City','Jaipur');
-insert into authorContact values(sequence_id.nextval, 'ericfreeman@gmail.com', 8192319147, 'Beside Sector 49 Mall', 'Sector 49','Noida');
+--insert into authorContact values(sequence_id.nextval, 'johnvissidies@gmail.com', 9018319147, 'Beside Pvr Mall', 'Ardee City','Jaipur');
+--insert into authorContact values(sequence_id.nextval, 'ericfreeman@gmail.com', 8192319147, 'Beside Sector 49 Mall', 'Sector 49','Noida');
 insert into authorContact values(sequence_id.nextval, 'thomascormen@gmail.com', 8192149147, 'Opp. Unitech Infospace', 'Old Delhi Gurgaon Road','Gurgaon');
 insert into authorContact values(sequence_id.nextval, 'ronaldrivest@gmail.com', 8927149147, 'Cyber Hub', 'DLF Cyber City','Gurgaon');
 insert into authorContact values(sequence_id.nextval, 'kathysierra@gmail.com', 8927999147, 'Opp. MGF Mall', 'MG Road','Gurgaon');
