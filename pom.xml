@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.121.123</modelVersion>
 	<groupId>Book</groupId>
-	<artifactId>Book</artifactId>
+	<artifactId>Books</artifactId>
 	<version>2.3.10-REMOTE</version>
 	<packaging>war</packaging>
 	<build>
