@@ -1,9 +1,9 @@
 --insert into publisherContact values(sequence_id.nextval, '9A & 12', 'New Delhi', 'Hauz khas Village', 7123129378);
 insert into publisherContact values(sequence_id.nextval, '2nd Floor, Munshilal Building', 'New Delhi', 'Connaught Palace', 7123163378);
--insert into publisherContact values(sequence_id.nextval, '45th A 2nd Cross', 'New Delhi', 'Golf Course Road', 7123129319);
+insert into publisherContact values(sequence_id.nextval, '45th A 2nd Cross', 'New Delhi', 'Golf Course Road', 7123129319);
 insert into publisherContact values(sequence_id.nextval, '31B 46th Cross', 'New Delhi', 'Greater Kailash', 9123129378);
--insert into publisherContact values(sequence_id.nextval, 'Ground Floor', 'New Delhi', 'Chanakyapuri', 7123191778);
--insert into publisherContact values(sequence_id.nextval, '43A/12-21', 'New Delhi', 'DLF Phase 4', 7191191778);
+insert into publisherContact values(sequence_id.nextval, 'Ground Floor', 'New Delhi', 'Chanakyapuri', 7123191778);
+insert into publisherContact values(sequence_id.nextval, '43A/12-21', 'New Delhi', 'DLF Phase 4', 7191191778);
 insert into publisherContact values(sequence_id.nextval, '91-12-21A', 'New Delhi', 'Bhikaji Cama Place', 7123192678);
 insert into publisherContact values(sequence_id.nextval, '917/21-17, Second Floor', 'New Delhi', 'Defense Colony', 7123191778);
 insert into publisherContact values(sequence_id.nextval, '43/19A, Second House', 'New Delhi', 'Sundar Nagar', 7018391778);
