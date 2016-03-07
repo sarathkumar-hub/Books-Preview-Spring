@@ -1,6 +1,7 @@
 A Sample Spring Application and a basic book previewing functionality.
 
 Made to learn Spring and developing Spring applications.
+
 Components used in this project are :-
 1. Spring MVC
 2. Spring Security (Only basic authentication).
